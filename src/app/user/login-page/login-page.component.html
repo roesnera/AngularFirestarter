@@ -1,3 +1,19 @@
-<p>Login works!</p>
+<!-- <p>Login works!</p>
 <button mat-button appGoogleSignin *ngIf="!authService.signedIn()">Login with Google</button>
-<button mat-button *ngIf="authService.signedIn()" (click)="authService.logout()">Logout</button>
+<button mat-button *ngIf="authService.signedIn()" (click)="authService.logout()">Logout</button> -->
+<div *ngIf="!authService.signedIn()">
+  <h1>Login</h1>
+
+  <button mat-raised-button appGoogleSignin>
+    <img src="/assets/google-logo.svg" /> Login with Google
+  </button>
+  <app-email-login></app-email-login>
+</div>
+
+<div *ngIf="authService.signedIn()" class="logout">
+  <p>
+    Logged in as <strong>{{ authService.getEmail() }}</strong>
+  </p>
+
+  <button mat-stroked-button (click)="authService.logout()">Logout</button>
+</div>
