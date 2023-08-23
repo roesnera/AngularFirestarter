@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "firestarter-angular-37711": {
+      "hosting": {
+        "firestarter-demo": [
+          "firestarter-angular-37711"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "firestarter-angular-37711"
+  }
+}
