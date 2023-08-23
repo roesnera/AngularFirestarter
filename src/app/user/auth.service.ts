@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { signInWithRedirect } from '@angular/fire/auth';
+import { signInWithPopup, signInWithRedirect } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Auth } from '@angular/fire/auth';
 import { GoogleAuthProvider, AuthProvider } from 'firebase/auth';
@@ -16,6 +16,15 @@ export class AuthService {
   }
 
   async AuthLogin(provider: AuthProvider) {
-    await signInWithRedirect(this.afAuth, new GoogleAuthProvider())
+    await signInWithPopup(this.afAuth, new GoogleAuthProvider())
+  }
+
+  signedIn(): boolean {
+    console.log(this.afAuth.currentUser)
+    return !!this.afAuth.currentUser;
+  }
+
+  logout() {
+    this.afAuth.signOut();
   }
 }
