@@ -7,7 +7,7 @@
   <button mat-raised-button appGoogleSignin>
     <img src="/assets/google-logo.svg" /> Login with Google
   </button>
-  <app-email-login></app-email-login>
+  <app-email-login id="login-component"></app-email-login>
 </div>
 
 <div *ngIf="authService.signedIn()" class="logout">
