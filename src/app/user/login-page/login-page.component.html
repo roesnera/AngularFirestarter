@@ -1,12 +1,14 @@
 <!-- <p>Login works!</p>
 <button mat-button appGoogleSignin *ngIf="!authService.signedIn()">Login with Google</button>
 <button mat-button *ngIf="authService.signedIn()" (click)="authService.logout()">Logout</button> -->
-<div *ngIf="!authService.signedIn()">
-  <h1>Login</h1>
-
-  <button mat-raised-button appGoogleSignin>
-    <img src="/assets/google-logo.svg" /> Login with Google
-  </button>
+<div *ngIf="!authService.signedIn()" class="login-area">
+  <mat-card class="login-area--google-card">
+    <h1>Login</h1>
+    <button mat-raised-button appGoogleSignin>
+      <img src="/assets/google-logo.svg" /> Login with Google
+    </button>
+  </mat-card>
+  <h5>OR</h5>
   <app-email-login id="login-component"></app-email-login>
 </div>
 
