@@ -49,7 +49,7 @@ export class EmailLoginComponent implements OnInit {
 
   // validator matches values in confirm password field and password field
   passwordsMatchValidator: ValidatorFn = (control: AbstractControl) : ValidationErrors | null => {
-    console.log('validator called!');
+    // console.log('validator called!');
     const password = control.get('password');
     const passwordConfirm = control.get('passwordConfirm');
 
@@ -65,7 +65,7 @@ export class EmailLoginComponent implements OnInit {
 
   passwordLongEnoughValidator: ValidatorFn = (control: AbstractControl) : ValidationErrors | null => {
     const password = control.get('password');
-    console.log(password?.errors);
+    // console.log(password?.errors);
 
     return password?.hasError('minlength') ? { passwordNotLongEnough: true}: null;
   }
@@ -92,18 +92,6 @@ export class EmailLoginComponent implements OnInit {
     return this.form.get('passwordConfirm') as FormControl;
   }
 
-  get passwordConfirmInvalid(): boolean {
-    console.log("Password: "+ !!this.password);
-    console.log("Password confirm "+!!this.passwordConfirm);
-    // console.log("Password value: "+this.password.value);
-    // console.log("Password confirm value: " + this.passwordConfirm.value);
-    console.log(!(this.passwordConfirm.value===this.password.value))
-    
-    
-    // console.log(this.password && this.passwordConfirm && !(this.password.value === this.passwordConfirm.value));
-    return !!this.password && !!this.passwordConfirm && !(this.password.value === this.passwordConfirm.value);
-  }
-
   get isLogin(): boolean {
     return this.type === 'login';
   }
@@ -123,6 +111,7 @@ export class EmailLoginComponent implements OnInit {
 
   async onSubmit(){
     this.loading = true;
+    console.log(`type is: ${this.type}`)
 
     // grabs field values and defaults to empty string if null
     const email = this.email.value ?? "";
@@ -141,6 +130,7 @@ export class EmailLoginComponent implements OnInit {
         await this.authService.createUserWithEmailAndPassword(email, password);
       }
       if (this.isPasswordReset){
+        console.log(`Email is: ${email}`)
         await this.authService.sendPasswordResetEmail(email);
         this.serverMessage = "Check your email";
       }

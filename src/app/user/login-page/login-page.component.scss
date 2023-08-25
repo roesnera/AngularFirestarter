@@ -12,3 +12,9 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.logo {
+    width: 1rem;
+    aspect-ratio: 1/1;
+    transform: translateY(.15rem) translateX(-.1rem);
+}

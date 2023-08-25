@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { signInWithPopup, signInWithRedirect } from '@angular/fire/auth';
+import { signInWithPopup, signInWithRedirect, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Auth } from '@angular/fire/auth';
 import { GoogleAuthProvider, AuthProvider } from 'firebase/auth';
@@ -37,15 +37,17 @@ export class AuthService {
   }
 
   async signInWithEmailAndPassword(email: any, password: any) {
-    await this.signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(this.afAuth,email, password);
   }
 
   async createUserWithEmailAndPassword(email: any, password: any) {
-    await this.createUserWithEmailAndPassword(email, password);
+    console.log('createUserWithEmailAndPassword method called');
+    await createUserWithEmailAndPassword(this.afAuth,email,password);
   }
 
   async sendPasswordResetEmail(email: any) {
-    await this.sendPasswordResetEmail(email);
+    console.log('password reset email method called')
+    await sendPasswordResetEmail(this.afAuth, email);
   }
 
 }
