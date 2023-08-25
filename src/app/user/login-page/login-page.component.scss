@@ -18,3 +18,11 @@
     aspect-ratio: 1/1;
     transform: translateY(.15rem) translateX(-.1rem);
 }
+
+.logout {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
