@@ -44,8 +44,59 @@ $custom-orange: (
         A700: white,
     )
 );
+
+$custom-triadic: (
+    50: #efffe5,
+    100: #d6ffbe,
+    200: #b7ff91,
+    300: #90ff58,
+    400: #66ff00,
+    500: #27fc00,
+    600: #00ea00,
+    700: #00d400,
+    800: #00c000,
+    900: #009a00,
+    contrast: (
+        50: rgba(0,0,0,0.87),
+        100: rgba(0,0,0,0.87),
+        200: rgba(0,0,0,0.87),
+        300: rgba(0,0,0,0.87),
+        400: rgba(0,0,0,0.87),
+        500: rgba(0,0,0,0.87),
+        600: rgba(0,0,0,0.87),
+        700: rgba(0,0,0,0.87),
+        800: rgba(0,0,0,0.87),
+        900: white,
+    )
+);
+
+$custom-complementary: (
+    50: #e2f4ff,
+    100: #bae2ff,
+    200: #88d0ff,
+    300: #46bdff,
+    400: #00adff,
+    500: #009dff,
+    600: #008eff,
+    700: #0079ff,
+    800: #0066ff,
+    900: #2341e0,
+    contrast: (
+        50: rgba(0,0,0,0.87),
+        100: rgba(0,0,0,0.87),
+        200: rgba(0,0,0,0.87),
+        300: rgba(0,0,0,0.87),
+        400: rgba(0,0,0,0.87),
+        500: rgba(0,0,0,0.87),
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+    )
+);
+
 $firestarter-demo-primary: mat.define-palette($custom-orange);
-$firestarter-demo-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$firestarter-demo-accent: mat.define-palette($custom-complementary);
 
 // The warn palette is optional (defaults to red).
 $firestarter-demo-warn: mat.define-palette(mat.$red-palette);

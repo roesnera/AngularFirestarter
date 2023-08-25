@@ -47,10 +47,13 @@ export class EmailLoginComponent implements OnInit {
       passwordConfirm: ['', [Validators.required]]}, { validators: [this.passwordsMatchValidator, this.passwordLongEnoughValidator]});
   }
 
+  // validator matches values in confirm password field and password field
   passwordsMatchValidator: ValidatorFn = (control: AbstractControl) : ValidationErrors | null => {
     console.log('validator called!');
     const password = control.get('password');
     const passwordConfirm = control.get('passwordConfirm');
+
+    if (password?.value.length !== passwordConfirm?.value.length) { return { passwordsDoNotMatch: true } }
     
     const toReturn = !!password 
     && !!passwordConfirm 
