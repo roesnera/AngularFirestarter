@@ -46,16 +46,12 @@ export class BoardService {
   }
   
   /* Get all user's boards */
-  getUserBoard() {
+  getUserBoards() {
     const uid = this.auth.afAuth.currentUser?.uid;
-    if(uid) {
-      const allBoards = collection(this.db, 'boards');
-      const collectionQuery = query(allBoards, where("uid", "==", uid), orderBy("priority"))
-      const userBoards = collectionData(collectionQuery);
-      return userBoards;
-    } else {
-      return [];
-    }
+    const allBoards = collection(this.db, 'boards');
+    const collectionQuery = query(allBoards, where("uid", "==", uid), orderBy("priority"))
+    const userBoards = collectionData(collectionQuery);
+    return userBoards;
   }
 
   sortBoards(boards: Board[]){
