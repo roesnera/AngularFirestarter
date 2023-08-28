@@ -30,4 +30,8 @@ export class BoardListComponent implements OnInit, OnDestroy {
     moveItemInArray(this.boards, event.previousIndex, event.currentIndex);
     this.boardService.sortBoards(this.boards);
   }
+
+  createBoard() {
+    
+  }
 }
