@@ -39,7 +39,7 @@ import { BoardService } from '../board.service';
 
   </div>
   `,
-  styles: [
+  styleUrls: ['./task-dialog.component.scss'
   ]
 })
 export class TaskDialogComponent {
