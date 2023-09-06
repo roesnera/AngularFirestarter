@@ -29,6 +29,8 @@ export class BoardListComponent implements OnInit, OnDestroy {
   }
 
   drop(event: CdkDragDrop<string[]>): void {
+    console.log(event.previousIndex);
+    console.log(event.currentIndex);
     moveItemInArray(this.boards, event.previousIndex, event.currentIndex);
     this.boardService.sortBoards(this.boards);
   }
@@ -47,9 +49,5 @@ export class BoardListComponent implements OnInit, OnDestroy {
         })
       }
     })
-  }
-
-  createBoard() {
-    
   }
 }

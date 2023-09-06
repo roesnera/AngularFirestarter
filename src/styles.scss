@@ -105,7 +105,7 @@ $firestarter-demo-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$firestarter-demo-theme: mat.define-light-theme((
+$firestarter-demo-theme: mat.define-dark-theme((
   color: (
     primary: $firestarter-demo-primary,
     accent: $firestarter-demo-accent,
