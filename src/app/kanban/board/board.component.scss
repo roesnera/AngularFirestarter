@@ -9,6 +9,12 @@
 .inner-card {
     margin: 5px 0;
     cursor: pointer;
+    // display: flex;
+    mat-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
 }
 
 .cdk-drag-animating {

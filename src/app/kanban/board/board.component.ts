@@ -50,4 +50,9 @@ export class BoardComponent {
     if(!this.board.id) return;
     this.boardService.deleteBoard(this.board.id);
   }
+
+  deleteTask(task: Task): void {
+    if(!this.board.id) return;
+    this.boardService.removeTask(this.board.id, task);
+  }
 }

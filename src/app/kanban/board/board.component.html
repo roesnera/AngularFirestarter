@@ -21,6 +21,7 @@
             *ngFor="let task of board.tasks; let i = index">
             <mat-card [ngClass]="task.label">
                 {{ task.description }}
+                <app-delete-button (delete)="deleteTask(task)"></app-delete-button>
             </mat-card>
         </div>
 
